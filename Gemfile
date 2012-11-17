@@ -4,6 +4,7 @@ gem 'rails', '3.2.9'
 gem "slim-rails"
 gem 'thin'
 gem 'sqlite3'
+gem 'devise'
 
 group :test do
   gem 'minitest'
