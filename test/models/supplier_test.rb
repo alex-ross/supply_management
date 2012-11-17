@@ -11,7 +11,14 @@ describe Supplier do
   it { supplier.must_respond_to :phone }
   it { supplier.must_respond_to :name }
   it { supplier.must_respond_to :url }
+  it { supplier.must_respond_to :categories }
 
-  #TODO: test validations
+
+  it "cud have categories" do
+    c1 = Factory.create :category
+    c2 = Factory.build :category
+    [c1, c2].each { |c| supplier.add_category(c) }
+    supplier.categories.count.must_equal 2
+  end
 end
 

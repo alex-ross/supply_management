@@ -13,3 +13,7 @@ Factory.define :supplier do |f|
   f.country "Sverige"
   f.url     "www.ica.se"
 end
+
+Factory.define :category do |f|
+  f.name "Category%d"
+end
