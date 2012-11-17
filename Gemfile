@@ -10,6 +10,7 @@ group :test do
   gem 'minitest'
   gem 'capybara'
   gem 'turn'
+  gem "miniskirt"
 end
 
 group :assets do

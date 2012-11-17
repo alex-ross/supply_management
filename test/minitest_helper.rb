@@ -3,6 +3,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require "minitest/autorun"
 require "capybara/rails"
 require "active_support/testing/setup_and_teardown"
+require 'factories'
 
 class IntegrationTest < MiniTest::Spec
   include Rails.application.routes.url_helpers
@@ -16,5 +17,5 @@ class HelperTest < MiniTest::Spec
   register_spec_type(/Helper$/, self)
 end
 
-Turn.config.format = :outline
+Turn.config.format = :dot
 
