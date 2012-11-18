@@ -11,13 +11,13 @@ group :test do
   gem 'minitest'
   gem 'capybara'
   gem 'turn'
-  gem "miniskirt"
+  gem 'miniskirt'
 end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'bootstrap-sass', '~> 2.2.1.0'
   gem 'coffee-rails', '~> 3.2.1'
-
   gem 'uglifier', '>= 1.0.3'
 end
 
