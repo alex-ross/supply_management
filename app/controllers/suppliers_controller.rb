@@ -3,10 +3,11 @@ class SuppliersController < ApplicationController
   # GET /suppliers.json
   def index
     @suppliers = Supplier.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @suppliers }
+    @gmaps_data = @suppliers.to_gmaps4rails do |supplier, marker|
+      marker.title supplier.name
+      marker.infowindow "Hej"
+      marker.sidebar "im the sidebar"
+      marker.json({ id: supplier.id, name: supplier.name })
     end
   end
 
