@@ -1,9 +1,10 @@
 .row
-  .span4
-    = render @suppliers
-    h1 Listing suppliers
+  = link_to 'New Supplier', new_supplier_path
+.row
+  ul.unstyled.suppliers.span5 = render @suppliers
+  .span7 = gmaps4rails @gmaps_data
 
-
+.row
     table
       tr
         th Name
@@ -31,6 +32,3 @@
     br
 
     = link_to 'New Supplier', new_supplier_path
-
-  .span8
-    = gmaps4rails @gmaps_data

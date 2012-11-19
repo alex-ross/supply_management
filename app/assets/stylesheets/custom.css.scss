@@ -1,5 +1,22 @@
- @import 'bootstrap';
+@import 'bootstrap';
+@import "bootstrap-responsive";
 
- body {
+body {
   padding-top: 40px;
- }
+}
+
+.suppliers {
+  li {
+    padding: 5px 0 5px 10px;
+    border-bottom: 1px solid $grayLighter;
+    border-right: 1px solid $grayLight;
+    &:last-child { border-bottom: none; }
+    &:hover { background: $grayLighter; }
+    &.active {
+      border: 1px solid $grayLight;
+      border-right: none;
+      box-shadow: 3px 0 3px $grayLight inset;
+
+    }
+  }
+}

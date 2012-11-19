@@ -1,0 +1,22 @@
+li
+  .row-fluid
+    .span6
+      address
+        strong = supplier.name
+        br
+        = supplier.address
+        br
+        = "#{supplier.zip} #{supplier.city}"
+        br
+        = supplier.country
+    .span6
+      address
+        - unless supplier.phone.blank?
+          abbr[title="phone"] = "P: "
+          = supplier.phone
+          br
+        = link_to supplier.email, "mailto:#{supplier.email}" unless supplier.email.blank?
+  - if supplier.categories.any?
+    .row-fluid
+      .span12
+        i.icon-tags: p = render supplier.categories
