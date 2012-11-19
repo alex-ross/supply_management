@@ -11,4 +11,9 @@ describe Category do
     category.name = " "
     category.invalid?(:name).must_equal true
   end
+
+  describe "must be saved whitout whitespace" do
+    bread = Factory.create :category, name: "bread "
+    it { bread.name.must_equal "bread" }
+  end
 end

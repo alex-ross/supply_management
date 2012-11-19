@@ -14,12 +14,12 @@ describe Supplier do
   it { supplier.must_respond_to :categories }
   it { supplier.must_respond_to :gmaps4rails_address }
 
-
-  it "cud have categories" do
-    c1 = Factory.create :category
-    c2 = Factory.build :category
-    [c1, c2].each { |c| supplier.add_category(c) }
-    supplier.categories.count.must_equal 2
+  describe "categories" do
+    before { supplier.category_names = "bread, milk, meat" }
+    it { supplier.categories.count.must_equal 3 }
+    it "can be get as string (without whitespace)" do
+      supplier.category_names.must_equal "bread,milk,meat"
+    end
   end
 end
 

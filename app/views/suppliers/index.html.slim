@@ -1,5 +1,5 @@
 .row
-  = link_to 'New Supplier', new_supplier_path
+  = link_to 'New Supplier', new_supplier_path, class: "btn btn-success"
 .row
   ul.unstyled.suppliers.span5 = render @suppliers
   .span7 = gmaps4rails @gmaps_data
