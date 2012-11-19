@@ -6,7 +6,7 @@
         - @supplier.errors.full_messages.each do |message|
           li = message
   .row
-    .span6
+    .span4
       .field
         = f.label :name
         = f.text_field :name
@@ -22,7 +22,7 @@
       .field
         = f.label :country
         = f.text_field :country
-    .span6
+    .span4
       .field
         = f.label :phone
         = f.text_field :phone
@@ -34,7 +34,11 @@
         = f.text_field :url
       .field
         = f.label :category_names
-        = f.text_field :category_names , data: { type: "categories" }, style: "width: 60%;"
+        = f.text_field :category_names , data: { type: "categories" }, style: "width: 100%;"
+    .span4
+      .field
+        = f.label :note
+        = f.text_area :note
   .row
     .span12
       .actions

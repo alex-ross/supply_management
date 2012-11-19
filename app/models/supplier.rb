@@ -1,6 +1,6 @@
 class Supplier < ActiveRecord::Base
   attr_accessible :address, :city, :country, :name, :url, :zip, :phone,
-                  :email, :category_names
+                  :email, :category_names, :note
 
   has_and_belongs_to_many :categories
 

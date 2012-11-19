@@ -12,6 +12,7 @@ describe Supplier do
   it { supplier.must_respond_to :name }
   it { supplier.must_respond_to :url }
   it { supplier.must_respond_to :categories }
+  it { supplier.must_respond_to :note }
   it { supplier.must_respond_to :gmaps4rails_address }
 
   describe "categories" do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121118113937) do
+ActiveRecord::Schema.define(:version => 20121119214238) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20121118113937) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
+    t.text     "note"
   end
 
   add_index "suppliers", ["name"], :name => "index_suppliers_on_name"
