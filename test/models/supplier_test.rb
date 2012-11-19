@@ -20,6 +20,13 @@ describe Supplier do
     it "can be get as string (without whitespace)" do
       supplier.category_names.must_equal "bread,milk,meat"
     end
+    describe "when saved with one more category" do
+      before { supplier.category_names = "bread, milk, meat, egg" }
+      it { supplier.categories.count.must_equal 4 }
+      it "can be get as string (without whitespace)" do
+        supplier.category_names.must_equal "bread,milk,meat,egg"
+      end
+    end
   end
 end
 
