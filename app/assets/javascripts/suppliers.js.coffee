@@ -2,9 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-# Bootstrap fix
 $ ->
-  $(window).bind "load resize", ->
-    h = $(window).height()
-    offsetTop = 40
-    $("#map").css('height', (h - offsetTop))
+  $("li[href]").click (e)->
+    unless $(e.target).is('.categories a')
+      location.href = $(this).attr('href')
+  $(".suppliers li.active").detach().prependTo("ul.suppliers")

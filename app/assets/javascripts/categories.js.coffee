@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $('input[data-type="categories"]').select2({
-    tags:["red", "green", "blue"],
+  $('input[data-type="categories"]').select2
+    tags: "",
     tokenSeparators: [",", " ", ";"]
-    })

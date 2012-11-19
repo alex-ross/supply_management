@@ -1,84 +1,64 @@
 class SuppliersController < ApplicationController
-  # GET /suppliers
-  # GET /suppliers.json
+  before_filter :find_supplier
+  before_filter :get_suppliers, only: [:index, :show]
+  before_filter :get_gmap_data, only: [:index, :show]
+
+
   def index
-    @suppliers = Supplier.all
-    @gmaps_data = @suppliers.to_gmaps4rails do |supplier, marker|
-      marker.title supplier.name
-      marker.infowindow "Hej"
-      marker.sidebar "im the sidebar"
-      marker.json({ id: supplier.id, name: supplier.name })
-    end
   end
 
-  # GET /suppliers/1
-  # GET /suppliers/1.json
   def show
-    @supplier = Supplier.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @supplier }
-    end
+    render action: "index"
   end
 
-  # GET /suppliers/new
-  # GET /suppliers/new.json
   def new
     @supplier = Supplier.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @supplier }
-    end
   end
 
-  # GET /suppliers/1/edit
   def edit
-    @supplier = Supplier.find(params[:id])
   end
 
-  # POST /suppliers
-  # POST /suppliers.json
   def create
     @supplier = Supplier.new(params[:supplier])
-
-    respond_to do |format|
-      if @supplier.save
-        format.html { redirect_to @supplier, notice: 'Supplier was successfully created.' }
-        format.json { render json: @supplier, status: :created, location: @supplier }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @supplier.errors, status: :unprocessable_entity }
-      end
+    if @supplier.save
+      redirect_to @supplier, notice: 'Supplier was successfully created.'
+    else
+      render action: "new"
     end
   end
 
-  # PUT /suppliers/1
-  # PUT /suppliers/1.json
   def update
-    @supplier = Supplier.find(params[:id])
+    if @supplier.update_attributes(params[:supplier])
+      redirect_to @supplier, notice: 'Supplier was successfully updated.'
+    else
+      render action: "edit"
+    end
+  end
 
-    respond_to do |format|
-      if @supplier.update_attributes(params[:supplier])
-        format.html { redirect_to @supplier, notice: 'Supplier was successfully updated.' }
-        format.json { head :no_content }
+  def destroy
+    @supplier.destroy
+    redirect_to suppliers_url
+  end
+
+  private
+    def find_supplier
+      @supplier = Supplier.find(params[:id]) if params[:id]
+    end
+
+    def get_suppliers
+      if params[:q]
+        @suppliers = Supplier.where("name LIKE ? OR city LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%")
       else
-        format.html { render action: "edit" }
-        format.json { render json: @supplier.errors, status: :unprocessable_entity }
+        @suppliers = Supplier.all
       end
     end
-  end
 
-  # DELETE /suppliers/1
-  # DELETE /suppliers/1.json
-  def destroy
-    @supplier = Supplier.find(params[:id])
-    @supplier.destroy
-
-    respond_to do |format|
-      format.html { redirect_to suppliers_url }
-      format.json { head :no_content }
+    def get_gmap_data
+      @gmaps_data = @suppliers.to_gmaps4rails do |supplier, marker|
+        marker.title supplier.name
+        marker.infowindow "Hej"
+        marker.sidebar "im the sidebar"
+        marker.json({ id: supplier.id, name: supplier.name })
+      end
     end
-  end
 end

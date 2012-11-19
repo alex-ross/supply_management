@@ -3,19 +3,71 @@
 
 body {
   padding-top: 40px;
+  background: url(bg.png);
+  text-shadow: 1px 1px rgba($white, 0.3);
+}
+
+.masthead {
+  h3 {
+    color: rgba($blue, 1);
+  }
 }
 
 .suppliers {
   li {
-    padding: 5px 0 5px 10px;
-    border-bottom: 1px solid $grayLighter;
+    padding: 5px 15px;
+    border-bottom: 1px solid $grayLight;
     border-right: 1px solid $grayLight;
     &:last-child { border-bottom: none; }
-    &:hover { background: $grayLighter; }
+    &:hover { background: rgba($grayLighter, 0.5); }
     &.active {
       border: 1px solid $grayLight;
       border-right: none;
-      box-shadow: 3px 0 3px $grayLight inset;
+      border-top: none;
+      box-shadow: 5px 0 5px rgba($grayLight, 0.5) inset;
+      &:first-child { border-top: 1px solid $grayLight;}
     }
   }
+}
+
+.bigger {
+  font-size:150%;
+}
+
+.field input[type="text"] {
+  width: 60%;
+}
+
+.select2-container {
+  padding:0;
+  margin:0;
+  .select2-choices {
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    border-radius: 4px 4px 4px 4px;
+    color: #555555;
+    display: inline-block;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    width: 100%;
+    padding: 1px 3px;
+    margin:0;
+    vertical-align: middle;
+  }
+}
+
+hr {
+   border: 0;
+   height: 1px;
+   background-image: -webkit-linear-gradient(left, rgba($gray,0),
+                     rgba($gray,0.75), rgba($gray,0));
+   background-image: -moz-linear-gradient(left, rgba($gray,0),
+                     rgba($gray,0.75), rgba($gray,0));
+   background-image: -ms-linear-gradient(left, rgba($gray,0),
+                     rgba($gray,0.75), rgba($gray,0));
+   background-image: -o-linear-gradient(left, rgba($gray,0),
+                     rgba($gray,0.75), rgba($gray,0));
 }

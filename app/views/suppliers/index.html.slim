@@ -1,34 +1,7 @@
-.row
-  = link_to 'New Supplier', new_supplier_path, class: "btn btn-success"
-.row
-  ul.unstyled.suppliers.span5 = render @suppliers
-  .span7 = gmaps4rails @gmaps_data
 
 .row
-    table
-      tr
-        th Name
-        th Address
-        th Zip
-        th City
-        th Country
-        th Url
-        th
-        th
-        th
-
-      - @suppliers.each do |supplier|
-        tr
-          td = supplier.name
-          td = supplier.address
-          td = supplier.zip
-          td = supplier.city
-          td = supplier.country
-          td = supplier.url
-          td = link_to 'Show', supplier
-          td = link_to 'Edit', edit_supplier_path(supplier)
-          td = link_to 'Destroy', supplier, :confirm => 'Are you sure?', :method => :delete
-
-    br
-
-    = link_to 'New Supplier', new_supplier_path
+  .span5
+    ul.unstyled.suppliers = render @suppliers
+  .span7
+    = render 'show' if @supplier
+    = gmaps4rails @gmaps_data

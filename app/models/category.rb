@@ -8,4 +8,8 @@ class Category < ActiveRecord::Base
   def name=(name)
     write_attribute(:name, name.try(:strip))
   end
+
+  def as_json(options)
+    { id: id, text: name }
+  end
 end

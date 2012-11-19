@@ -1,0 +1,25 @@
+.row-fluid.bigger
+  .span6
+    address
+      strong = supplier.name
+      br
+      = supplier.address
+      br
+      = "#{supplier.zip} #{supplier.city}"
+      br
+      = supplier.country
+  .span6
+    .pull-right.btn-group
+      = link_to 'Edit', edit_supplier_path(supplier), class: "btn btn-info"
+      = link_to 'Delete', supplier, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-inverse"
+    address
+      = "Phone: #{supplier.phone}" unless supplier.phone.blank?
+      br
+      - unless supplier.email.blank?
+        'Email:
+        = link_to supplier.email, "mailto:#{supplier.email}" unless supplier.email.blank?
+- unless supplier.categories.empty?
+  .row-fluid.categories
+    .span12
+      i.icon-tags
+      = render supplier.categories
