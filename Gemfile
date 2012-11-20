@@ -6,7 +6,7 @@ gem 'thin'
 gem 'sqlite3'
 gem 'devise'
 gem 'gmaps4rails'
-gem "select2-rails"
+
 
 group :test do
   gem 'minitest'
@@ -20,6 +20,7 @@ group :assets do
   gem 'bootstrap-sass', '~> 2.2.1.0'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem "select2-rails"
 end
 
 gem 'jquery-rails'

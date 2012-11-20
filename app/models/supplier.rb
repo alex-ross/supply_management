@@ -2,7 +2,8 @@ class Supplier < ActiveRecord::Base
   attr_accessible :address, :city, :country, :name, :url, :zip, :phone,
                   :email, :category_names, :note
 
-  has_and_belongs_to_many :categories
+  has_many :categoryships
+  has_many :categories, through: :categoryships
 
   acts_as_gmappable
 
@@ -24,7 +25,8 @@ class Supplier < ActiveRecord::Base
 
   private
     def delete_unused_categories(list)
-      categories.each { |c| c.delete unless list.include?(c.name) }
+      old_categories = categories - Category.where(name: list)
+      categories.delete(old_categories)
     end
 
     def add_new_categories(list)

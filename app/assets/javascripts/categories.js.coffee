@@ -3,6 +3,16 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $('input[data-type="categories"]').select2
-    tags: "",
+
+  tags = ()->
+    items = []
+    $.getJSON "http://#{location.host}/categories.json", (data)->
+        $.each data, (index, value)->
+          console.log index, value
+          items.push value.name
+          console.log items
+    items
+
+  $(".select2").select2
+    tags: tags(),
     tokenSeparators: [",", " ", ";"]

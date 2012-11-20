@@ -33,8 +33,8 @@
         = f.label :url
         = f.text_field :url
       .field
-        = f.label :category_names
-        = f.text_field :category_names , data: { type: "categories" }, style: "width: 100%;"
+        = f.label :category_names, "Categories"
+        = f.text_field :category_names, style: "width: 100%;", class: "select2"
     .span4
       .field
         = f.label :note
