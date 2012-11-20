@@ -56,8 +56,7 @@ class SuppliersController < ApplicationController
     def get_gmap_data
       @gmaps_data = @suppliers.to_gmaps4rails do |supplier, marker|
         marker.title supplier.name
-        marker.infowindow "Hej"
-        marker.sidebar "im the sidebar"
+        marker.infowindow "<strong>#{supplier.name}</strong>"
         marker.json({ id: supplier.id, name: supplier.name })
       end
     end
