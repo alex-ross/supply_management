@@ -1,6 +1,6 @@
 SupplyManagement::Application.routes.draw do
 
-  resources :categories
+  resources :categories, only: :index
   resources :suppliers
 
   root to: 'suppliers#index'
