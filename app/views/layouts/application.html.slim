@@ -17,12 +17,6 @@ html
           li = link_to 'Sign out', destroy_user_session_path, :method => :delete
         h3 Supply Management
       hr
-
-      .row
-        .span12
-          = form_tag suppliers_path, method: :get, class: "form-search" do
-            = text_field_tag "q", nil, class: "input-medium search-query"
-            = submit_tag "Search", class: "btn"
       - flash.each do |key, value|
         div[class="alert alert-#{key}"] = value
       = yield
