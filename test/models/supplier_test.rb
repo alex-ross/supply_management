@@ -29,5 +29,29 @@ describe Supplier do
       end
     end
   end
+
+  describe "validations" do
+    it { supplier.valid?.must_equal true }
+
+    it "must have an name" do
+      supplier.name = " "
+      supplier.invalid?(:name).must_equal true
+    end
+
+    it "must have an address" do
+      supplier.address = " "
+      supplier.invalid?(:address).must_equal true
+    end
+
+    it "must have an city" do
+      supplier.city = " "
+      supplier.invalid?(:city).must_equal true
+    end
+
+    it "must have an country" do
+      supplier.country = " "
+      supplier.invalid?(:country).must_equal true
+    end
+  end
 end
 
