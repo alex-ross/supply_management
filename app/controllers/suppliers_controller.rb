@@ -47,7 +47,9 @@ class SuppliersController < ApplicationController
 
     def get_suppliers
       if params[:q]
-        @suppliers = Supplier.where("name LIKE ? OR city LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%")
+        @q = params[:q]
+        categories = Category.where("name like ?", "%#{@q}%").map(&:supplier_ids)
+        @suppliers = Supplier.where("name like ?", "%#{@q}%") + Supplier.where(id: categories)
       else
         @suppliers = Supplier.all
       end
