@@ -18,9 +18,9 @@
       - unless supplier.email.blank?
         'Email:
         = link_to supplier.email, "mailto:#{supplier.email}" unless supplier.email.blank?
-.row-fluid
-  .span12
-    = supplier.note
+- unless supplier.note.blank?
+  .row-fluid
+    pre.span12 = supplier.note
 - unless supplier.categories.empty?
   .row-fluid.categories
     .span12
