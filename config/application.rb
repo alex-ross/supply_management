@@ -73,6 +73,8 @@ module SupplyManagement
       Devise::ConfirmationsController.layout "session"
       Devise::UnlocksController.layout "session"
       Devise::PasswordsController.layout "session"
+
+      Devise::SessionsController.skip_before_filter
     end
   end
 end
