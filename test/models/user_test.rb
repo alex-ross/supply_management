@@ -6,6 +6,10 @@ describe User do
   it { user.must_respond_to :email }
   it { user.must_respond_to :password_confirmation }
   it { user.must_respond_to :remember_me }
+  it { user.valid?.must_equal true}
 
-  #TODO: Test validations
+  it "can be invalid" do
+    invalid_user = Factory.build :user, password_confirmation: "WrongPassword"
+    invalid_user.valid?.must_equal false
+  end
 end
