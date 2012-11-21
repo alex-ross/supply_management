@@ -15,6 +15,6 @@
         = f.label :country
         = f.text_field :country
       .actions
-        = f.submit 'Save', class: "btn btn-success"
+        = f.submit t('save'), class: "btn btn-success"
         = " "
-        = link_to "Back", suppliers_path
+        = link_to t("back"), suppliers_path

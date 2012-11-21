@@ -6,7 +6,7 @@ class SettingsController < ApplicationController
 
   def update
     if @user.update_attributes(params[:user])
-      redirect_to suppliers_url, notice: 'Your settings was succefully updated!'
+      redirect_to suppliers_url, notice: I18n.t('settings_updated')
     else
       render action: "edit"
     end

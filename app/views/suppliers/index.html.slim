@@ -1,9 +1,9 @@
-- provide :title, "Suppliers"
+- provide :title, t('.title')
 .row
   .span5
     = form_tag suppliers_path, method: :get, class: "form-search" do
       = text_field_tag "q", @q, class: "input-medium search-query"
-      = submit_tag "Search", class: "btn"
+      = submit_tag t("search"), class: "btn"
     ul.unstyled.suppliers = render @suppliers
   .span7
     = render 'show' if @supplier

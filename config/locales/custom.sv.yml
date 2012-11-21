@@ -1,0 +1,30 @@
+sv:
+  save: "Spara"
+  back: "Bakåt"
+  edit: "Redigera"
+  delete: "Radera"
+  search: "Sök"
+  are_you_sure: 'Är du säker?'
+  app_name: "Supply Management"
+  settings_updated: 'Dina installningar är sparade!'
+  supplier_created: 'Leverantören är skapad!'
+  supplier_updated: 'Leverantören är uppdaterad'
+  distance: "%{distance} från dig!"
+  distance_error: "Din eller leverantörens adress kan inte hittas!"
+  layouts:
+    application:
+      all_suppliers: "Alla leverantörer"
+      new_supplier: "Ny leverantör"
+      settings: "Inställningar"
+      sign_out: "Logga ut"
+  suppliers:
+    supplier_item:
+      phone: "Telefon:"
+      email: "Epost:"
+      homepage: "Hemsida:"
+    edit:
+      title: 'redigera leverantör'
+    index:
+      title: "Leverantörer"
+    new:
+      title: "Ny leverantör"

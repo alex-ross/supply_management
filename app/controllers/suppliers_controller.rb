@@ -21,7 +21,7 @@ class SuppliersController < ApplicationController
   def create
     @supplier = Supplier.new(params[:supplier])
     if @supplier.save
-      redirect_to @supplier, notice: 'Supplier was successfully created.'
+      redirect_to @supplier, notice: I18n.t('supplier_created')
     else
       render action: "new"
     end
@@ -29,7 +29,7 @@ class SuppliersController < ApplicationController
 
   def update
     if @supplier.update_attributes(params[:supplier])
-      redirect_to @supplier, notice: 'Supplier was successfully updated.'
+      redirect_to @supplier, notice: I18n.t('supplier_updated')
     else
       render action: "edit"
     end

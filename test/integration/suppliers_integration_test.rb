@@ -25,7 +25,7 @@ describe "Suppliers integration" do
 
   describe "in show page" do
     it "should view suppliers address" do
-      visit supplier_path(supplier)
+      visit supplier_path(supplier, locale: "en")
       page.text.must_include supplier.address
       page.text.must_include supplier.zip
       page.text.must_include supplier.city

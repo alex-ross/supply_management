@@ -10,13 +10,17 @@ html
 
 
     .container
+      .row: .pull-right
+          = link_to "Svenska", url_for(locale: "sv")
+          = " | "
+          = link_to "English", url_for(locale: "en")
       .masthead
         ul.nav.nav-pills.pull-right
-          li = link_to "All suppliers", suppliers_path
-          li = link_to 'New Supplier', new_supplier_path
-          li = link_to 'Settings', settings_path
-          li = link_to 'Sign out', destroy_user_session_path, :method => :delete
-        h3 Supply Management
+          li = link_to t('.all_suppliers'), suppliers_path
+          li = link_to t('.new_supplier'), new_supplier_path
+          li = link_to t('.settings'), settings_path
+          li = link_to t('.sign_out'), destroy_user_session_path, :method => :delete
+        h3 = t('app_name')
       hr
       - flash.each do |key, value|
         div[class="alert alert-#{key}"] = value

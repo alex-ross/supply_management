@@ -1,0 +1,33 @@
+sv:
+  activerecord:
+    models:
+      user: "Användare"
+      supplier: "Leverantör"
+      category: "Kategori"
+    attributes:
+      user:
+        email: "Epost"
+        password: "Lösenord"
+        password_confirmation: "Bekräfta lösenord"
+        remember_me: "Kom ihåg mig?"
+        address: "Adress"
+        zip: "Postnummer"
+        city: "Ort"
+        country: "Land"
+      supplier:
+        name: "Namn"
+        address: "Adress"
+        zip: "Postnummer"
+        city: "Ort"
+        country: "Land"
+        url: "Hemsida"
+        phone: "Telefon"
+        category_names: "Kategorier"
+        category: "Kategorier"
+        note: "Notering"
+      category:
+        name: "Namn"
+        suppliers: "Leverantörer"
+    errors:
+      header: "Felaktiga fält"
+      message: "Rätta följande fel och försök igen."

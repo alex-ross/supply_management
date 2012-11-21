@@ -10,17 +10,17 @@
       = supplier.country
   .span6
     .pull-right.btn-group
-      = link_to 'Edit', edit_supplier_path(supplier), class: "btn btn-info"
-      = link_to 'Delete', supplier, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-inverse"
+      = link_to t('edit'), edit_supplier_path(supplier), class: "btn btn-info"
+      = link_to t('delete'), supplier, confirm: t('are_you_sure'), method: :delete, class: "btn btn-inverse"
     address
-      = "Phone: #{supplier.phone}" unless supplier.phone.blank?
+      = "#{t '.phone'} #{supplier.phone}" unless supplier.phone.blank?
       br
       - unless supplier.email.blank?
-        'Email:
+        = "#{t '.email'} "
         = link_to supplier.email, "mailto:#{supplier.email}" unless supplier.email.blank?
         br
       - unless supplier.url.blank?
-        'Homepage:
+        = "#{t '.homepage'} "
         = link_to supplier.url, supplier.url
         br
       = distance(current_user, supplier)

@@ -28,7 +28,7 @@
         = f.label :url
         = f.text_field :url
       .field
-        = f.label :category_names, "Categories"
+        = f.label :category_names
         = f.text_field :category_names, style: "width: 100%;", class: "select2"
     .span4
       .field
@@ -37,6 +37,6 @@
   .row
     .span12
       .actions
-        = f.submit 'Save', class: "btn btn-success"
+        = f.submit t('save'), class: "btn btn-success"
         = " "
-        = link_to "Back", :back
+        = link_to t("back"), :back

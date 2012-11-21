@@ -1,0 +1,31 @@
+en:
+  save: "Save"
+  back: "Back"
+  edit: "Edit"
+  delete: "Delete"
+  search: "Search"
+  are_you_sure: 'Are you sure?'
+  app_name: "Supply Management"
+  settings_updated: 'Your settings was succefully updated!'
+  supplier_created: 'Supplier was successfully created.'
+  supplier_updated: 'Supplier was successfully updated.'
+  distance: "%{distance} from you!"
+  distance_error: "Your adress or suppliers address can't be found!"
+  layouts:
+    application:
+      all_suppliers: "All suppliers"
+      new_supplier: "New supplier"
+      settings: "Settings"
+      sign_out: "Sign out"
+  suppliers:
+    supplier_item:
+      phone: "Phone:"
+      email: "Email:"
+      homepage: "Homepage:"
+    edit:
+      title: 'Editing supplier'
+    index:
+      title: "Suppliers"
+    new:
+      title: "New supplier"
+

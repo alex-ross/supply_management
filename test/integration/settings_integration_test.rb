@@ -13,9 +13,11 @@ describe "Suppliers integration" do
   end
 
   it "should redirect to suppliers after submit" do
-    visit settings_path
+    visit settings_path(locale: "en")
+    current_path == settings_path
     fill_in "Address", with: "Storgatan 11"
-    fill_in "City", with: "F%e4rjestaden"
+    fill_in "City", with: "Farjestaden"
+    fill_in "Zip", with: "12345"
     fill_in "Country", with: "Sverige"
     click_button "Save"
     page.has_selector?("title", text: "Suppliers")
