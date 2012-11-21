@@ -2,6 +2,10 @@ SupplyManagement::Application.routes.draw do
 
   resources :categories, only: :index
   resources :suppliers
+  #resources :settings, only: [:edit, :update]
+
+  get 'settings', to: 'settings#edit'
+  put 'settings', to: 'settings#update'
 
   root to: 'suppliers#index'
 

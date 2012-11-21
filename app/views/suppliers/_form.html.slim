@@ -1,10 +1,5 @@
 = form_for @supplier do |f|
-  - if @supplier.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@supplier.errors.count, "error")} prohibited this supplier from being saved:"
-      ul
-        - @supplier.errors.full_messages.each do |message|
-          li = message
+  = f.error_messages
   .row
     .span4
       .field

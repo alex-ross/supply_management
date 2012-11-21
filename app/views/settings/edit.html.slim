@@ -1,0 +1,20 @@
+= form_for @user, url: settings_path, method: :put do |f|
+  = f.error_messages
+  .row
+    .span12
+      .field
+        = f.label :address
+        = f.text_field :address
+      .field
+        = f.label :zip
+        = f.text_field :zip
+      .field
+        = f.label :city
+        = f.text_field :city
+      .field
+        = f.label :country
+        = f.text_field :country
+      .actions
+        = f.submit 'Save', class: "btn btn-success"
+        = " "
+        = link_to "Back", suppliers_path

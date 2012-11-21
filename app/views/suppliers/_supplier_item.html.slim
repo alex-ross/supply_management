@@ -22,6 +22,8 @@
       - unless supplier.url.blank?
         'Homepage:
         = link_to supplier.url, supplier.url
+
+      = distance(current_user, supplier)
 - unless supplier.note.blank?
   .row-fluid
     pre.span12 = supplier.note

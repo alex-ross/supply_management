@@ -6,9 +6,11 @@ describe "Suppliers integration" do
 
   it "sign in user" do
     visit suppliers_path
-    fill_in "Email", with: user.email
-    fill_in "Password", with: "password"
-    click_button "Sign in"
+    if current_path == new_user_session_path
+      fill_in "Email", with: user.email
+      fill_in "Password", with: "password"
+      click_button "Sign in"
+    end
   end
 
   describe "in index page" do
@@ -36,7 +38,7 @@ describe "Suppliers integration" do
       visit new_supplier_path
       fill_in "Name", with: "New Supplier"
       click_button "Save"
-      page.has_selector?('#error_explanation')
+      page.has_css?('.error_explanation')
       page.has_selector?("title", text: "New supplier")
     end
 
