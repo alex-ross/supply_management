@@ -18,6 +18,10 @@
       - unless supplier.email.blank?
         'Email:
         = link_to supplier.email, "mailto:#{supplier.email}" unless supplier.email.blank?
+        br
+      - unless supplier.url.blank?
+        'Homepage:
+        = link_to supplier.url, supplier.url
 - unless supplier.note.blank?
   .row-fluid
     pre.span12 = supplier.note
