@@ -7,6 +7,8 @@ gem 'sqlite3'
 gem 'devise'
 gem 'gmaps4rails'
 gem 'faker'
+gem 'pg', group: :production
+
 
 
 group :test do
