@@ -6,6 +6,7 @@ gem 'thin'
 gem 'sqlite3'
 gem 'devise'
 gem 'gmaps4rails'
+gem 'faker'
 
 
 group :test do
