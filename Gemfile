@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem "slim-rails"
 gem 'thin'
-gem 'sqlite3'
+gem 'sqlite3', group: [:test, :development]
 gem 'devise'
 gem 'gmaps4rails'
 gem 'faker'
