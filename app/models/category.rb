@@ -6,6 +6,8 @@ class Category < ActiveRecord::Base
   has_many :categoryships
   has_many :suppliers, through: :categoryships
 
+  default_scope :order => "name ASC"
+
   def name=(name)
     write_attribute(:name, name.try(:strip))
   end

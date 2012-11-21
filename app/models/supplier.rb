@@ -8,6 +8,7 @@ class Supplier < ActiveRecord::Base
   acts_as_gmappable
 
   validates :name, :address, :city, :country, presence: true
+  default_scope :order => "name ASC"
 
   def gmaps4rails_address
     "#{self.address}, #{self.city}, #{self.country}"
