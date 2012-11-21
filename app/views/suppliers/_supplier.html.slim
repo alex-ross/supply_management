@@ -1,5 +1,5 @@
 li[class="#{"active" if current_page? supplier_path(supplier)}"
-  href=supplier_path(supplier)]
+  href=supplier_path(supplier, q: @q)]
   h3 = supplier.name
   - unless supplier.categories.empty?
     .row-fluid.categories
