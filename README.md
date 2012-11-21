@@ -43,19 +43,17 @@ Run tests.
 ---
 To run all test use: ```rake```
 
-To run specifik test file use: ```ruby -Itest <dir_to_testfile>```
-
 Time
 ---
 
-I think an experienced web developer shood do an app like this in 10 hours. 
+When I recived the work I thougt it shood take like 10 hours.
 
-How long time did it take for me to develop?
+So how long time did it take?
 
 * 8h Writing app, tests and design. May also include some minor googling.
-* 1,25h Reading and watched railscasts about minitest, slim and Google Maps api.
+* 1,5h Reading documentations and watched railscasts about minitest, slim and Google Maps api.
 * 2h Planning
 
-So this app did take me about 11,25 hours to complete.
+This app did take me about 11,5 hours to complete.
 
 
