@@ -63,7 +63,7 @@ GEM
       multi_json (~> 1.0)
     faker (1.0.1)
       i18n (~> 0.4)
-    ffi (1.1.5)
+    ffi (1.11.1)
     gmaps4rails (1.5.6)
     hike (1.2.1)
     i18n (0.6.1)
